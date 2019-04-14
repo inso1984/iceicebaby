@@ -1,42 +1,34 @@
 package application;
 	
 import javafx.application.Application;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	
+	private Scene scene;
+	private SaleDay[] saleDays = new SaleDay[10];
+	private int round = 0;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			
+			// Fenstertitel
 			primaryStage.setTitle("Ice Ice Baby!");
 			
-	        StackPane root = new StackPane();
-	        root.setId("pane");
-	        
-	        VBox main = new VBox();
-	        main.setId("main");
-	        			
-			Label label1 = new Label("Ice Ice Baby!");
-			Text text1 = new Text("ztztwrzt");
-			Button button1 = new Button("Spiel starten");
+			// Baut den Startbildschirm auf
+			StartScene start = new StartScene(this);
 			
-			main.getChildren().add(label1);
-			main.getChildren().add(text1);
-			main.getChildren().add(button1);
 			
-	        root.getChildren().addAll(main);			
-			
-			Scene scene = new Scene(root,1200,800);
+	        // Startbildschirm
+			//new Scene(Pane,width,height) Pane = Designelement, breite, höhe
+			this.scene = new Scene(start.buildStartScene(),1200,800);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
+
+	        
+
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -45,5 +37,32 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		
+
 	}
+	public Scene getScene() {
+		return this.scene;
+	}
+
+	public SaleDay[] getSaleDays() {
+		return saleDays;
+	}
+
+	public void setSaleDays(SaleDay[] saleDays) {
+		this.saleDays = saleDays;
+	}
+
+	public int getRound() {
+		return round;
+	}
+
+	public void setRound(int round) {
+		this.round = round;
+	}
+
+	public void setScene(Scene scene) {
+		this.scene = scene;
+	}
+	
+	
 }
