@@ -11,7 +11,7 @@ public class SaleDay {
 	private double costs;
 	private double earnings;
 	
-	public void saleDay() {
+	public SaleDay() {
 		this.weather = new Weather();			
 	}
 

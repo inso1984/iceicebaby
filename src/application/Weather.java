@@ -73,8 +73,8 @@ public class Weather {
 
 	}
 
-	public int getTemperature() {
-		return temperature;
+	public String getTemperature() {
+		return String.format("Heute sind es %d Grad.",temperature);
 	}
 
 	public void setTemperature(int temperature) {

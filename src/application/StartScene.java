@@ -25,7 +25,8 @@ public class StartScene {
         
         // Container-Inhalt
 		Label label1 = new Label("Ice Ice Baby!");
-		Text text1 = new Text("ztztwrzt");
+		Text text1 = new Text("Beweise dein Talent als Eisverkäufer ...\n");
+		text1.setId("text");
 		Button startButton = new Button("Spiel starten");
 		// startet die Funktion um eine neue Scene zu erstellen
 		addStartFunction(startButton);
@@ -44,7 +45,7 @@ public class StartScene {
 	private void addStartFunction(Button startButton) {
 		startButton.setOnAction((event) -> {
 		    System.out.println("hasllo");
-			DayScene scene = new DayScene(this.main);
+			RulesScene scene = new RulesScene(this.main);
 		    main.getScene().setRoot(scene.buildScene());
 		});
 	}

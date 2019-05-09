@@ -5,16 +5,33 @@
     -fx-background-repeat: no-repeat;   
     -fx-background-size: 1200 800;
     -fx-background-position: center center;
-    -fx-background-color:transparent;
 }
 #main{
 	-fx-padding: 30px;
 	-fx-vgap: 30px;
 	-fx-hgap: 20px;
-	-fx-max-width: 700;
-	-fx-max-height: 300;
-	-fx-background-color: ffffff;
-	-fx-font-size: 3.0em;
+	-fx-max-width: 900;
+	-fx-max-height: 500;
+	-fx-background-color: rgba(255, 255, 255, 0.5);
 	-fx-alignment: center;
 }
+.label {
+	-fx-padding: 10px;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#text {
+	-fx-padding: 10px;
+    -fx-font-size: 30px;
+}
+.text {
+	-fx-padding: 10px;
+    -fx-font-size: 30px;
+}
+.button {
+    -fx-font-size: 20px;
+}
+
 
