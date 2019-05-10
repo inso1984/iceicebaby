@@ -44,7 +44,6 @@ public class StartScene {
 	// Funktion zum starten einer neuen Tagesscene, wird durch klicken auf den Starbutton aufgerufen
 	private void addStartFunction(Button startButton) {
 		startButton.setOnAction((event) -> {
-		    System.out.println("hasllo");
 			RulesScene scene = new RulesScene(this.main);
 		    main.getScene().setRoot(scene.buildScene());
 		});

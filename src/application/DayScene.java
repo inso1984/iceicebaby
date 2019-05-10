@@ -15,6 +15,7 @@ public class DayScene {
 	private Main main;
 	private SaleDay saleDay;
 	private TextField waffeln;
+	private TextField eismenge;
 
 	public DayScene(Main main) {
 		this.main = main;
@@ -39,15 +40,18 @@ public class DayScene {
 		wetterText.getStyleClass().add("text");
 		Text temperaturText = new Text(this.saleDay.getWeather().getTemperature());
 		temperaturText.getStyleClass().add("text");
+		Text eingabeWaffelmenge = new Text("Wie viele Waffeln möchtest du einkaufen?");
 		this.waffeln = new TextField();
-		Button forward = new Button("weiter");
-		addForwardEvent(forward);
+		Text eingabeEismenge = new Text("Wie viele Liter Eis möchtest du einkaufen?");
+		this.eismenge = new TextField();
+		Button action = new Button("weiter");
+		addForwardEvent(action);
 
 		Button cancel = new Button("Spiel verlassen");
 		addCancelEvent(cancel);
 
 		// Inhalt in den Container einfügen
-		main.getChildren().addAll(label1, wetterText, temperaturText, waffeln, forward, cancel);
+		main.getChildren().addAll(label1, wetterText, temperaturText, eingabeWaffelmenge, waffeln, eingabeEismenge, eismenge, action, cancel);
 		root.getChildren().addAll(main);
 		return root;
 	}
@@ -55,7 +59,15 @@ public class DayScene {
 	private void addForwardEvent(Button forward) {
 		forward.setOnAction((event) -> {
 			System.out.println(waffeln.getText());
+			System.out.println(eismenge.getText());
 			DayScene scene = new DayScene(this.main);
+			main.getScene().setRoot(scene.buildScene());
+		});
+	}
+	
+	private void addActionEvent(Button action) {
+		action.setOnAction((event) -> {
+			ResultScene scene = new ResultScene(this.main);
 			main.getScene().setRoot(scene.buildScene());
 		});
 	}
