@@ -1,13 +1,11 @@
 package application;
 
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class RulesScene {
 
@@ -21,7 +19,6 @@ public class RulesScene {
 		// Hintergrundbild im Fenster
 		StackPane root = new StackPane();
 		root.setId("pane");
-		SaleDay saleDay = new SaleDay();
 
 		// Container
 		VBox main = new VBox();
@@ -29,12 +26,10 @@ public class RulesScene {
 
 		// Container-Inhalt
 		Label label1 = new Label("Spielregeln");
-		Text regelText = new Text(
-				"Du hast 10 Tage (Runden) Zeit, dein Verkaufstalent als Eis-Verkäufer unter \n"
-						+ "Beweis zu stellen. Entscheide Anhand der Wettervorhersage wie viele Waffeln \n"
-						+ "und wie viel Liter Eis für den aktuellen Tag benötigt werden. Liegst du mit deiner \n"
-						+ "Planung richtig wirst du Gewinn erwirtschaften.\n"
-						+ "Liegst du falsch wirst du Verlust machen.\n");
+		Text regelText = new Text("Du hast 10 Tage (Runden) Zeit, dein Verkaufstalent als Eis-Verkäufer unter \n"
+				+ "Beweis zu stellen. Entscheide Anhand der Wettervorhersage wie viele Waffeln \n"
+				+ "und wie viel Liter Eis für den aktuellen Tag benötigt werden. Liegst du mit deiner \n"
+				+ "Planung richtig wirst du Gewinn erwirtschaften.\n" + "Liegst du falsch wirst du Verlust machen.\n");
 		regelText.setId("text");
 		Button forward = new Button("weiter");
 		addForwardEvent(forward);
