@@ -7,7 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class RulesScene {
+public class RulesScene implements ApplicationScene{
 
 	private Main main;
 
@@ -58,7 +58,7 @@ public class RulesScene {
 	private void addCancelEvent(Button cancel) {
 		cancel.setOnAction((event) -> {
 			StartScene start = new StartScene(this.main);
-			main.getScene().setRoot(start.buildStartScene());
+			main.getScene().setRoot(start.buildScene());
 		});
 	}
 

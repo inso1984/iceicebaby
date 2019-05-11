@@ -7,13 +7,13 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class StartScene {
+public class StartScene implements ApplicationScene{
 	private Main main;
 	public StartScene(Main main) {
 		this.main = main;
 	}
 	
-	public Pane buildStartScene() {		
+	public Pane buildScene() {		
 		
 		// Hintergrundbild im Fenster
         StackPane root = new StackPane();
